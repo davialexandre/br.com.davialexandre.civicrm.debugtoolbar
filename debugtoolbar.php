@@ -2,6 +2,9 @@
 
 require_once 'debugtoolbar.civix.php';
 use CRM_DebugToolbar_ExtensionUtil as E;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
 /**
  * Implements hook_civicrm_config().
@@ -121,4 +124,9 @@ function debugtoolbar_civicrm_angularModules(&$angularModules) {
  */
 function debugtoolbar_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
   _debugtoolbar_civix_civicrm_alterSettingsFolders($metaDataFolders);
+}
+
+function debugtoolbar_civicrm_container(ContainerBuilder $container) {
+  $loader = new XmlFileLoader($container, new FileLocator(__DIR__));
+  $loader->load('config/services.xml');
 }
