@@ -6,9 +6,14 @@
     <service id="debug_toolbar.data_collector.api"
              class="DaviAlexandre\DebugToolbar\DataCollector\ApiDataCollector">
       <tag name="kernel.event_subscriber" />
+      <tag name="debug_toolbar.data_collector" />
     </service>
     <service id="debug_toolbar.data_collector.civicrm"
              class="DaviAlexandre\DebugToolbar\DataCollector\CiviCRMDataCollector">
+      <tag name="debug_toolbar.data_collector" />
+    </service>
+    <service id="debug_toolbar.profiler"
+             class="DaviAlexandre\DebugToolbar\Profiler">
     </service>
   </services>
 

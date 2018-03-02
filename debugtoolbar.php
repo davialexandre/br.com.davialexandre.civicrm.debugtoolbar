@@ -2,6 +2,7 @@
 
 require_once 'debugtoolbar.civix.php';
 use CRM_DebugToolbar_ExtensionUtil as E;
+use DaviAlexandre\DebugToolbar\DependencyInjection\Compiler\ProfilerPass;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
@@ -75,6 +76,7 @@ function debugtoolbar_civicrm_disable() {
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_upgrade
  */
 function debugtoolbar_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
+  return [true];
   return _debugtoolbar_civix_civicrm_upgrade($op, $queue);
 }
 
@@ -129,4 +131,5 @@ function debugtoolbar_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
 function debugtoolbar_civicrm_container(ContainerBuilder $container) {
   $loader = new XmlFileLoader($container, new FileLocator(__DIR__));
   $loader->load('config/services.xml');
+  $container->addCompilerPass(new ProfilerPass());
 }
