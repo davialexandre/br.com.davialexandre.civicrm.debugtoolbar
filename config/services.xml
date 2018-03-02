@@ -7,6 +7,9 @@
              class="DaviAlexandre\DebugToolbar\DataCollector\ApiDataCollector">
       <tag name="kernel.event_subscriber" />
     </service>
+    <service id="debug_toolbar.data_collector.civicrm"
+             class="DaviAlexandre\DebugToolbar\DataCollector\CiviCRMDataCollector">
+    </service>
   </services>
 
 </container>
