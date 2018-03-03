@@ -6,4 +6,6 @@ interface DataCollectorInterface {
 
   public function collect();
 
+  public function getName();
+
 }

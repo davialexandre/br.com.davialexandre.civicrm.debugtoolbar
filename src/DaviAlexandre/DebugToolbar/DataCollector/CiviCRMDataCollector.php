@@ -6,6 +6,10 @@ class CiviCRMDataCollector implements DataCollectorInterface {
 
   private $data = [];
 
+  public function getName() {
+    return 'civicrm';
+  }
+
   public function collect() {
     $this->data['civicrm'] = $this->getCiviCRMData();
 

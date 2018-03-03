@@ -10,6 +10,10 @@ class ApiDataCollector implements DataCollectorInterface, EventSubscriberInterfa
 
   private $data = [];
 
+  public function getName() {
+    return 'api';
+  }
+
   public function collect() {
     return $this->data;
   }
