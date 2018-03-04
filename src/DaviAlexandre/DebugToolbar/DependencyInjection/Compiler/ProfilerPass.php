@@ -17,11 +17,17 @@ class ProfilerPass implements CompilerPassInterface {
 
     $taggedServices = $container->findTaggedServiceIds('debug_toolbar.data_collector');
 
+    $templates = [];
     foreach ($taggedServices as $id => $tags) {
       $definition->addMethodCall('addDataCollector', array(
         new Reference($id)
       ));
+      $templates[$tags[0]['id']] = [
+        'toolbar' => $tags[0]['toolbar_template']
+      ];
     }
+
+    $container->setParameter('debug_toolbar.templates', $templates);
   }
 
   private function getProfilerDefinition(ContainerBuilder $container) {
