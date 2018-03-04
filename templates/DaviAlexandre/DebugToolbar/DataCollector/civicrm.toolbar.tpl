@@ -1,4 +1,4 @@
-<div class="da-toolbar-block da-toolbar-block-left">
+<div class="da-toolbar-block da-toolbar-block-right">
   <span class="da-toolbar-value"><span class="crm-logo-sm"></span>{$collector->getVersion()}</span>
   <div class="da-toolbar-details">
     <table>

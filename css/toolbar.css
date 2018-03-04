@@ -40,10 +40,13 @@
   display: none;
   position: absolute;
   bottom: 36px;
-  left: 0;
   padding: 5px;
   background-color: #2474A6;
 }
+
+#da-debug-toolbar .da-toolbar-block-left .da-toolbar-details { left: 0; }
+
+#da-debug-toolbar .da-toolbar-block-right .da-toolbar-details { right: 0; }
 
 #da-debug-toolbar .da-toolbar-block:hover .da-toolbar-details { display: block; }
 
