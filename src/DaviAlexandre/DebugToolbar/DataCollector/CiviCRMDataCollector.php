@@ -2,9 +2,16 @@
 
 namespace DaviAlexandre\DebugToolbar\DataCollector;
 
+use Civi\Core\Paths;
+
 class CiviCRMDataCollector implements DataCollectorInterface {
 
   private $data = [];
+  private $paths;
+
+  public function __construct(Paths $paths) {
+    $this->paths = $paths;
+  }
 
   public function getName() {
     return 'civicrm';
@@ -36,6 +43,38 @@ class CiviCRMDataCollector implements DataCollectorInterface {
     return count($this->data['settings']['enable_components']);
   }
 
+  public function getRootDir() {
+    return $this->data['paths']['root'];
+  }
+
+  public function getExtensionsDir() {
+    return $this->data['paths']['extensions'];
+  }
+
+  public function getTemporaryFilesDir() {
+    return $this->data['paths']['temporaryFiles'];
+  }
+
+  public function getCustomFilesDir() {
+    return $this->data['paths']['customFiles'];
+  }
+
+  public function getImagesDir() {
+    return $this->data['paths']['images'];
+  }
+
+  public function isDebugEnabled() {
+    return (bool)$this->data['settings']['debug_enabled'];
+  }
+
+  public function isBacktraceEnabled() {
+    return (bool)$this->data['settings']['backtrace'];
+  }
+
+  public function getEnvironment() {
+    return (bool)$this->data['settings']['environment'];
+  }
+
   private function getSystemInfo() {
     return $this->apiGetFirst('System');
   }
@@ -47,10 +86,12 @@ class CiviCRMDataCollector implements DataCollectorInterface {
       return;
     }
 
+    $settings = $this->getSettings();
     return [
       'version' => \CRM_Utils_Array::value('version', $systemInfo['civi']),
-      'settings' => $this->getSettings(),
-      'extensions' => $this->getExtensions()
+      'settings' => $settings,
+      'extensions' => $this->getExtensions(),
+      'paths' => $this->getPaths($settings)
     ];
   }
 
@@ -77,6 +118,16 @@ class CiviCRMDataCollector implements DataCollectorInterface {
     return $extensionsData;
   }
 
+  private function getPaths($settings) {
+    return [
+      'root' => $this->paths->getPath('[civicrm.root]/.'),
+      'extensions' => $this->paths->getPath($settings['extensionsDir']),
+      'temporaryFiles' => $this->paths->getPath($settings['uploadDir']),
+      'customFiles' => $this->paths->getPath($settings['customFileUploadDir']),
+      'images' => $this->paths->getPath($settings['imageUploadDir'])
+    ];
+  }
+
   private function getSchemaVersion($key) {
     $revision = \CRM_Core_BAO_Extension::getSchemaVersion($key);
     if (!$revision) {
@@ -101,5 +152,9 @@ class CiviCRMDataCollector implements DataCollectorInterface {
     $response = $this->apiGet($entity);
 
     return reset($response);
+  }
+
+  public function __sleep() {
+    return ['data'];
   }
 }

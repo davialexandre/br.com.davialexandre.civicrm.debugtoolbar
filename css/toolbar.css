@@ -17,6 +17,12 @@
   white-space: nowrap;
 }
 
+#da-debug-toolbar .da-toolbar-block .da-toolbar-status { padding: 4px 5px; }
+
+#da-debug-toolbar .da-toolbar-block .da-toolbar-status-success { background-color: #3e963f; }
+
+#da-debug-toolbar .da-toolbar-block .da-toolbar-status-failure { background-color: #E00B27; }
+
 #da-debug-toolbar .da-toolbar-block:hover { background-color: #2474A6; }
 
 #da-debug-toolbar .da-toolbar-block .da-toolbar-value { line-height: 36px; }

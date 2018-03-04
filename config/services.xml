@@ -13,6 +13,8 @@
 
     <service id="debug_toolbar.data_collector.civicrm"
              class="DaviAlexandre\DebugToolbar\DataCollector\CiviCRMDataCollector">
+      <argument type="service" id="paths" />
+
       <tag name="debug_toolbar.data_collector"
            toolbar_template="DaviAlexandre/DebugToolbar/DataCollector/civicrm.toolbar.tpl"
            id="civicrm" />
