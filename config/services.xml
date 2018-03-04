@@ -20,6 +20,13 @@
            id="civicrm" />
     </service>
 
+    <service id="debug_toolbar.data_collector.memory"
+             class="DaviAlexandre\DebugToolbar\DataCollector\MemoryDataCollector">
+      <tag name="debug_toolbar.data_collector"
+           toolbar_template="DaviAlexandre/DebugToolbar/DataCollector/memory.toolbar.tpl"
+           id="memory" />
+    </service>
+
     <service id="debug_toolbar.profiler" class="DaviAlexandre\DebugToolbar\Profiler">
       <argument type="service" id="resources" />
       <argument type="service" id="paths" />
