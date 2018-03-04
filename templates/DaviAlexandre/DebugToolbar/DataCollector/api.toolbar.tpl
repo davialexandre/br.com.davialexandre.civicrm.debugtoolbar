@@ -1,5 +1,5 @@
 <div class="da-toolbar-block da-toolbar-block-left">
-  <span class="da-toolbar-value">{$collector->getNumberOfApiCalls()}</span>
+  <span class="da-toolbar-value"><i class="fa fa-plug"></i>{$collector->getNumberOfApiCalls()}</span>
   <div class="da-toolbar-details">
     <table>
       <tr>

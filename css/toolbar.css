@@ -21,6 +21,17 @@
 
 #da-debug-toolbar .da-toolbar-block .da-toolbar-value { line-height: 36px; }
 
+#da-debug-toolbar .da-toolbar-block .da-toolbar-value i.fa { margin-right: 5px; }
+
+#da-debug-toolbar .da-toolbar-block .da-toolbar-value .crm-logo-sm {
+  background: url('/sites/all/modules/civicrm/i/logo_sm.png') no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
 #da-debug-toolbar .da-toolbar-block-left { float: left; }
 
 #da-debug-toolbar .da-toolbar-block-right { float: right; }
