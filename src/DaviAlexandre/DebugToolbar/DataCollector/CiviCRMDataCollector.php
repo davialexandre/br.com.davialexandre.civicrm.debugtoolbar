@@ -11,9 +11,29 @@ class CiviCRMDataCollector implements DataCollectorInterface {
   }
 
   public function collect() {
-    $this->data['civicrm'] = $this->getCiviCRMData();
+    $this->data = $this->getCiviCRMData();
+  }
 
-    return $this->data;
+  public function getVersion() {
+    return $this->data['version'];
+  }
+
+  public function getNumberOfExtensions() {
+    return count($this->data['extensions']);
+  }
+
+  public function getNumberOfInstalledExtensions() {
+    return count(array_filter($this->data['extensions'], function($extension) {
+      return $extension['status'] == 'installed';
+    }));
+  }
+
+  public function getNumberOfEnabledComponents() {
+    if(empty($this->data['settings']['enable_components'])) {
+      return 0;
+    }
+
+    return count($this->data['settings']['enable_components']);
   }
 
   private function getSystemInfo() {

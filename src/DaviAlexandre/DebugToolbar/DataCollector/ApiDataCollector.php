@@ -14,8 +14,14 @@ class ApiDataCollector implements DataCollectorInterface, EventSubscriberInterfa
     return 'api';
   }
 
-  public function collect() {
-    return $this->data;
+  public function collect() {}
+
+  public function getNumberOfApiCalls() {
+    return count($this->data);
+  }
+
+  public function getAverageCallTime() {
+    return array_sum(array_column($this->data, 'time')) / count($this->data);
   }
 
   public static function getSubscribedEvents() {
