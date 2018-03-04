@@ -1,0 +1,48 @@
+#da-debug-toolbar {
+  padding: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #1A2A40;
+  box-shadow: 0px 7px 22px 6px rgba(0,0,0,0.46);
+}
+
+#da-debug-toolbar .da-toolbar-block {
+  position: relative;
+  height: 36px;
+  max-width: 400px;
+  padding: 0 8px;
+  color: #EBF4F7;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#da-debug-toolbar .da-toolbar-block:hover { background-color: #2474A6; }
+
+#da-debug-toolbar .da-toolbar-block .da-toolbar-value { line-height: 36px; }
+
+#da-debug-toolbar .da-toolbar-block-left { float: left; }
+
+#da-debug-toolbar .da-toolbar-block-right { float: right; }
+
+#da-debug-toolbar .da-toolbar-block .da-toolbar-details {
+  display: none;
+  position: absolute;
+  bottom: 36px;
+  left: 0;
+  padding: 5px;
+  background-color: #2474A6;
+}
+
+#da-debug-toolbar .da-toolbar-block:hover .da-toolbar-details { display: block; }
+
+#da-debug-toolbar .da-toolbar-block .da-toolbar-details table {
+  margin: 0;
+  border: 0;
+}
+
+#da-debug-toolbar .da-toolbar-block .da-toolbar-details tbody { border: 0; }
+
+#da-debug-toolbar .da-toolbar-block .da-toolbar-details tr td { padding: 2px 6px; }
+
+#da-debug-toolbar .da-toolbar-block .da-toolbar-details tr td:first-child { font-weight: bold; }

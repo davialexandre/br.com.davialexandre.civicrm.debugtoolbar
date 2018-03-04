@@ -14,6 +14,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  */
 function debugtoolbar_civicrm_config(&$config) {
   _debugtoolbar_civix_civicrm_config($config);
+  $profiler = Civi::container()->get('debug_toolbar.profiler');
 }
 
 /**
@@ -132,4 +133,20 @@ function debugtoolbar_civicrm_container(ContainerBuilder $container) {
   $loader = new XmlFileLoader($container, new FileLocator(__DIR__));
   $loader->load('config/services.xml');
   $container->addCompilerPass(new ProfilerPass());
+}
+
+function debugtoolbar_civicrm_pageRun($page) {
+  if ($page instanceof \DaviAlexandre\DebugToolbar\Page\Toolbar) {
+    return;
+  }
+
+  _debugtoolbar_civicrm_addResources();
+}
+
+function debugtoolbar_civicrm_buildForm($formName, $form) {
+  _debugtoolbar_civicrm_addResources();
+}
+
+function _debugtoolbar_civicrm_addResources() {
+  Civi::resources()->addScriptFile(E::LONG_NAME, 'js/toolbar.js');
 }

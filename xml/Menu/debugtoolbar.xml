@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/debug-toolbar/toolbar</path>
+    <page_callback>DaviAlexandre\DebugToolbar\Page\Toolbar</page_callback>
+    <title>Debug Toolbar</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>
