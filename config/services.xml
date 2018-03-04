@@ -12,8 +12,10 @@
              class="DaviAlexandre\DebugToolbar\DataCollector\CiviCRMDataCollector">
       <tag name="debug_toolbar.data_collector" />
     </service>
-    <service id="debug_toolbar.profiler"
-             class="DaviAlexandre\DebugToolbar\Profiler">
+
+    <service id="debug_toolbar.profiler" class="DaviAlexandre\DebugToolbar\Profiler">
+      <argument type="service" id="resources" />
+      <argument type="service" id="paths" />
     </service>
   </services>
 
