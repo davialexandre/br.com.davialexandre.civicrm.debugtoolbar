@@ -37,9 +37,7 @@ class CiviCRMDataCollector implements DataCollectorInterface {
   }
 
   private function getSystemInfo() {
-    $values = $this->apiGet('System');
-
-    return reset($values);
+    return $this->apiGetFirst('System');
   }
 
   private function getCiviCRMData() {
@@ -57,7 +55,7 @@ class CiviCRMDataCollector implements DataCollectorInterface {
   }
 
   private function getSettings() {
-    return $this->apiGet('Setting');
+    return $this->apiGetFirst('Setting');
   }
 
   private function getExtensions() {
@@ -97,5 +95,11 @@ class CiviCRMDataCollector implements DataCollectorInterface {
     $response = civicrm_api3($entity, 'get');
 
     return empty($response['values']) ? [] : $response['values'];
+  }
+
+  private function apiGetFirst($entity) {
+    $response = $this->apiGet($entity);
+
+    return reset($response);
   }
 }
