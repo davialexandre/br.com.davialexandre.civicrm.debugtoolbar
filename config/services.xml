@@ -27,6 +27,14 @@
            id="memory" />
     </service>
 
+    <service id="debug_toolbar.data_collector.page"
+             class="DaviAlexandre\DebugToolbar\DataCollector\PageDataCollector">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="debug_toolbar.data_collector"
+           toolbar_template="DaviAlexandre/DebugToolbar/DataCollector/page.toolbar.tpl"
+           id="page" />
+    </service>
+
     <service id="debug_toolbar.profiler" class="DaviAlexandre\DebugToolbar\Profiler">
       <argument type="service" id="resources" />
       <argument type="service" id="paths" />
