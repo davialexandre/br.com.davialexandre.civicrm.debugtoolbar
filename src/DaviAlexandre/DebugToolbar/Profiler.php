@@ -9,6 +9,7 @@ class Profiler {
   private $collectors = [];
   private $profileIdentifier;
   private $paths;
+  private $enabled = true;
 
   public function __construct(\CRM_Core_Resources $resources, \Civi\Core\Paths $paths) {
     $resources->addSetting([
@@ -18,11 +19,27 @@ class Profiler {
     $this->paths = $paths;
   }
 
+  public function enable() {
+    $this->enabled = true;
+  }
+
+  public function disable() {
+    $this->enabled = false;
+  }
+
+  public function isDisabled() {
+    return !$this->enabled;
+  }
+
   public function addDataCollector(DataCollectorInterface $collector) {
     $this->collectors[] = $collector;
   }
 
   public function collect() {
+    if($this->isDisabled()) {
+      return;
+    }
+
     $profile = new Profile($this->createProfileIdentifier());
     $profile->setTime(new \DateTimeImmutable());
     $profile->setUrl(\CRM_Utils_Array::value('REQUEST_URI', $_SERVER));
@@ -37,6 +54,10 @@ class Profiler {
   }
 
   public function saveProfile(Profile $profile) {
+    if($this->isDisabled()) {
+      return;
+    }
+
     $profilePath = $this->getProfilePath($profile->getIdentifier());
     file_put_contents($profilePath, serialize($profile));
   }
@@ -61,6 +82,8 @@ class Profiler {
 
   public function __destruct() {
     $profile = $this->collect();
-    $this->saveProfile($profile);
+    if($profile) {
+      $this->saveProfile($profile);
+    }
   }
 }
