@@ -9,5 +9,13 @@
     dataType: "html"
   }).done(function(data) {
     $(window.document.body).append(data);
+
+    $('.da-toolbar-close-button').on('click', function() {
+      $('#da-debug-toolbar').addClass('da-toolbar-closed');
+    });
+
+    $('.da-toolbar-open-button').on('click', function() {
+      $('#da-debug-toolbar').removeClass('da-toolbar-closed');
+    });
   });
 })(window, CRM, CRM.$);
