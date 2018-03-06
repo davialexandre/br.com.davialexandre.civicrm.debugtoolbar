@@ -35,7 +35,7 @@
            id="page" />
     </service>
 
-    <service id="debug_toolbar.profiler" class="DaviAlexandre\DebugToolbar\Profiler">
+    <service id="debug_toolbar.profiler" class="DaviAlexandre\DebugToolbar\Profile\Profiler">
       <argument type="service" id="resources" />
       <argument type="service" id="paths" />
     </service>

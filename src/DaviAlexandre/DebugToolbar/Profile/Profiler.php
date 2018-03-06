@@ -1,6 +1,6 @@
 <?php
 
-namespace DaviAlexandre\DebugToolbar;
+namespace DaviAlexandre\DebugToolbar\Profile;
 
 use DaviAlexandre\DebugToolbar\DataCollector\DataCollectorInterface;
 
