@@ -35,6 +35,13 @@
            id="page" />
     </service>
 
+    <service id="debug_toolbar.data_collector.user"
+             class="DaviAlexandre\DebugToolbar\DataCollector\UserDataCollector">
+      <tag name="debug_toolbar.data_collector"
+           toolbar_template="DaviAlexandre/DebugToolbar/DataCollector/user.toolbar.tpl"
+           id="user" />
+    </service>
+
     <service id="debug_toolbar.profile_file_storage" class="DaviAlexandre\DebugToolbar\Profile\FileProfileStorage">
       <argument type="service" id="paths" />
     </service>
