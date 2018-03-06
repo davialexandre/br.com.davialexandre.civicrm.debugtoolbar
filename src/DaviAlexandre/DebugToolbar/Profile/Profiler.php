@@ -8,15 +8,15 @@ class Profiler {
 
   private $collectors = [];
   private $profileIdentifier;
-  private $paths;
   private $enabled = true;
+  private $storage;
 
-  public function __construct(\CRM_Core_Resources $resources, \Civi\Core\Paths $paths) {
+  public function __construct(ProfileStorageInterface $storage, \CRM_Core_Resources $resources) {
+    $this->storage = $storage;
+
     $resources->addSetting([
       'debug_toolbar_profile_identifier' => $this->createProfileIdentifier()
     ]);
-
-    $this->paths = $paths;
   }
 
   public function enable() {
@@ -58,18 +58,11 @@ class Profiler {
       return;
     }
 
-    $profilePath = $this->getProfilePath($profile->getIdentifier());
-    file_put_contents($profilePath, serialize($profile));
+    $this->storage->write($profile);
   }
 
   public function loadProfile($identifier) {
-    $profilePath = $this->getProfilePath($identifier);
-
-    return unserialize(file_get_contents($profilePath));
-  }
-
-  private function getProfilePath($identifier) {
-    return $this->paths->getPath('[civicrm.files]/debug_toolbar/profiles/'.$identifier);
+    return $this->storage->read($identifier);
   }
 
   private function createProfileIdentifier() {

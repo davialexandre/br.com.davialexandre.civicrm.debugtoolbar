@@ -35,9 +35,13 @@
            id="page" />
     </service>
 
-    <service id="debug_toolbar.profiler" class="DaviAlexandre\DebugToolbar\Profile\Profiler">
-      <argument type="service" id="resources" />
+    <service id="debug_toolbar.profile_file_storage" class="DaviAlexandre\DebugToolbar\Profile\FileProfileStorage">
       <argument type="service" id="paths" />
+    </service>
+
+    <service id="debug_toolbar.profiler" class="DaviAlexandre\DebugToolbar\Profile\Profiler">
+      <argument type="service" id="debug_toolbar.profile_file_storage" />
+      <argument type="service" id="resources" />
     </service>
   </services>
 
