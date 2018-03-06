@@ -3,8 +3,11 @@
 namespace DaviAlexandre\DebugToolbar\DataCollector;
 
 use Civi\Core\Paths;
+use DaviAlexandre\DebugToolbar\Helper\ApiTrait;
 
 class CiviCRMDataCollector implements DataCollectorInterface {
+
+  use ApiTrait;
 
   private $data = [];
   private $paths;
@@ -140,18 +143,6 @@ class CiviCRMDataCollector implements DataCollectorInterface {
   private function getCurrentRevisionDeprecated($key) {
     $key = $key . ':version';
     return \CRM_Core_BAO_Setting::getItem('Extension', $key);
-  }
-
-  private function apiGet($entity) {
-    $response = civicrm_api3($entity, 'get');
-
-    return empty($response['values']) ? [] : $response['values'];
-  }
-
-  private function apiGetFirst($entity) {
-    $response = $this->apiGet($entity);
-
-    return reset($response);
   }
 
   public function __sleep() {
