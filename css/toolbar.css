@@ -59,6 +59,13 @@
   background-color: #2474A6;
 }
 
+#da-debug-toolbar .da-toolbar-block .da-toolbar-details a {
+  color: #00fbff;
+  text-decoration: underline;
+}
+
+#da-debug-toolbar .da-toolbar-block .da-toolbar-details a:hover { text-decoration: none; }
+
 #da-debug-toolbar .da-toolbar-block-left .da-toolbar-details { left: 0; }
 
 #da-debug-toolbar .da-toolbar-block-right .da-toolbar-details { right: 0; }
