@@ -42,6 +42,14 @@
            id="user" />
     </service>
 
+    <service id="debug_toolbar.data_collector.database"
+             class="DaviAlexandre\DebugToolbar\DataCollector\DatabaseDataCollector">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="debug_toolbar.data_collector"
+           toolbar_template="DaviAlexandre/DebugToolbar/DataCollector/database.toolbar.tpl"
+           id="database" />
+    </service>
+
     <service id="debug_toolbar.profile_file_storage" class="DaviAlexandre\DebugToolbar\Profile\FileProfileStorage">
       <argument type="service" id="paths" />
     </service>
