@@ -83,10 +83,17 @@
 
 #da-debug-toolbar .da-toolbar-block .da-toolbar-details tbody { border: 0; }
 
+#da-debug-toolbar .da-toolbar-block .da-toolbar-details tr {
+  border: 0;
+  background-color: inherit;
+}
+
 #da-debug-toolbar .da-toolbar-block .da-toolbar-details tr td {
   border: 0;
   padding: 6px;
+  line-height: normal;
   color: #EBF4F7;
+  background-color: inherit;
 }
 
 #da-debug-toolbar .da-toolbar-block .da-toolbar-details tr td:first-child {
