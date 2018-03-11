@@ -19,8 +19,7 @@ class Toolbar extends \CRM_Core_Page {
 
     \Civi::resources()->addStyleFile(E::LONG_NAME, 'css/toolbar.css');
 
-
-    $this->assign('collectors', $profile->getCollectors());
+    $this->assign('profile', $profile);
     $this->assign('templates', \Civi::container()->getParameter('debug_toolbar.templates'));
 
     parent::run();

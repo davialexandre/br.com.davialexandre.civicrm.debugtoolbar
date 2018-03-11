@@ -1,5 +1,7 @@
 <div class="da-toolbar-block da-toolbar-block-right">
-  <span class="da-toolbar-value"><span class="crm-logo-sm"></span>{$collector->getVersion()}</span>
+  <a class="da-toolbar-profile-link" href="/civicrm/debug-toolbar/profile?id={$profile->getIdentifier()}&panel={$collector->getName()}">
+    <span class="da-toolbar-value"><span class="crm-logo-sm"></span>{$collector->getVersion()}</span>
+  </a>
   <div class="da-toolbar-details">
     <table>
       <tr>
