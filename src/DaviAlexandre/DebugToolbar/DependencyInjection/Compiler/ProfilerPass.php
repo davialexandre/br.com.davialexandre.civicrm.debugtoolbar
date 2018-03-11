@@ -23,7 +23,9 @@ class ProfilerPass implements CompilerPassInterface {
         new Reference($id)
       ));
       $templates[$tags[0]['id']] = [
-        'toolbar' => $tags[0]['toolbar_template']
+        'toolbar' => empty($tags[0]['toolbar_template']) ? null : $tags[0]['toolbar_template'],
+        'profile_menu_item' => empty($tags[0]['profile_menu_item_template']) ? null : $tags[0]['profile_menu_item_template'],
+        'profile' => empty($tags[0]['profile_template']) ? null : $tags[0]['profile_template']
       ];
     }
 

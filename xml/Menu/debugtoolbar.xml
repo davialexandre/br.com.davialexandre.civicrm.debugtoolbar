@@ -6,4 +6,11 @@
     <title>Debug Toolbar</title>
     <access_arguments>access CiviCRM</access_arguments>
   </item>
+  <item>
+    <path>civicrm/debug-toolbar/profile</path>
+    <page_callback>DaviAlexandre\DebugToolbar\Page\Profile</page_callback>
+    <title>Debug Toolbar - Profile</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+
 </menu>

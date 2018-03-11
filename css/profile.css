@@ -1,0 +1,146 @@
+/**
+ CSS RESET
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+ END CSS RESET
+ */
+
+html { height: 100%; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #EBF4F7;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 1 0 auto;
+}
+
+#da-profile-summary {
+  background-color: #2474A6;
+  color: #EBF4F7;
+}
+
+#da-profile-summary h1 {
+  background-color: #000000;
+  font-size: 2em;
+  padding: 10px;
+}
+
+#da-profile-url {
+  padding: 15px 10px 0 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#da-profile-url a {
+  color: #EBF4F7;
+  text-decoration: none;
+}
+
+#da-profile-url a:hover { text-decoration: underline; }
+
+#da-profile-metadata {
+  display: flex;
+  padding: 15px 10px;
+}
+
+#da-profile-metadata .da-profile-metadata-label { font-weight: bold; }
+
+#da-profile-metadata li {
+  margin-right: 30px;
+  font-size: .9em;
+}
+
+#da-profile-menu {
+  width: 250px;
+  background-color: #1A2A40;
+  flex: 0 0 250px;
+}
+
+#da-profile-menu a {
+  color: #EBF4F7;
+  text-decoration: none;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+#da-profile-menu ul {
+  margin-top: 10px;
+}
+
+#da-profile-menu .da-profile-selected-menu-item {
+  border-left: 3px solid #2474A6;
+  background-color: rgba(255,255,255, .1);
+}
+
+#da-profile-menu ul li .fa {
+  padding-right: 15px;
+}
+
+#da-profile-menu ul li:hover { background-color: #2474A6; }
+
+#da-profile-collector {
+  flex: 1 1 auto;
+  padding: 10px 20px;
+}
+
+#da-profile-collector h3 {
+  font-weight: normal;
+  font-size: 1.7em;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+#da-profile-collector h3:first-of-type { margin-top: 0; }
