@@ -10,7 +10,7 @@ class FileProfileStorage implements ProfileStorageInterface {
     $this->storageFolder = $paths->getPath('[civicrm.files]/debug_toolbar/profiles');
 
     if(!$this->createFolderRecursive($this->storageFolder)) {
-      throw \RuntimeException('It was not possible to create the storage folder for Profiles at ' . $this->storageFolder);
+      throw new \RuntimeException('It was not possible to create the storage folder for Profiles at ' . $this->storageFolder);
     }
   }
 
@@ -18,7 +18,7 @@ class FileProfileStorage implements ProfileStorageInterface {
     $profilePath = $this->getProfileFolder($identifier) . '/' . $identifier;
 
     if(!file_exists($profilePath)) {
-      throw \RuntimeException('It was not possible to find the Profile with the identifier '. $identifier);
+      throw new \RuntimeException('It was not possible to find the Profile with the identifier '. $identifier);
     }
 
     return unserialize(file_get_contents($profilePath));
@@ -28,7 +28,7 @@ class FileProfileStorage implements ProfileStorageInterface {
     $profileFolder = $this->getProfileFolder($profile->getIdentifier());
 
     if(!$this->createFolderRecursive($profileFolder)) {
-      throw \RuntimeException('It was not possible to create the storage folder for Profiles at ' . $profileFolder);
+      throw new \RuntimeException('It was not possible to create the storage folder for Profiles at ' . $profileFolder);
     }
 
     $profilePath = $profileFolder . '/' . $profile->getIdentifier();
