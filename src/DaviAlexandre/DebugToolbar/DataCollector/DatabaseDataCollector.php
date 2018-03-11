@@ -42,6 +42,10 @@ class DatabaseDataCollector implements DataCollectorInterface, EventSubscriberIn
     return $this->getTotalTime() / $this->getNumberOfQueries();
   }
 
+  public function getQueries() {
+    return $this->data['queries'];
+  }
+
   private function handleDatabaseDebugMessage($class, $message, $logtype) {
     if ($logtype == 'QUERY') {
       $this->queryStack[$class][] = $message;

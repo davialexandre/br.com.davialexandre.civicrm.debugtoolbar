@@ -54,6 +54,7 @@
       <tag name="debug_toolbar.data_collector"
            toolbar_template="DaviAlexandre/DebugToolbar/DataCollector/database.toolbar.tpl"
            profile_menu_item_template="DaviAlexandre/DebugToolbar/DataCollector/database.profile_menu_item.tpl"
+           profile_template="DaviAlexandre/DebugToolbar/DataCollector/database.profile.tpl"
            id="database" />
     </service>
 
