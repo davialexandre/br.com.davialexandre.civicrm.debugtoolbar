@@ -9,6 +9,7 @@
       <tag name="debug_toolbar.data_collector"
            toolbar_template="DaviAlexandre/DebugToolbar/DataCollector/api.toolbar.tpl"
            profile_menu_item_template="DaviAlexandre/DebugToolbar/DataCollector/api.profile_menu_item.tpl"
+           profile_template="DaviAlexandre/DebugToolbar/DataCollector/api.profile.tpl"
            id="api" />
     </service>
 

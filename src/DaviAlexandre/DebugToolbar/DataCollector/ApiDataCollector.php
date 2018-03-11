@@ -28,6 +28,10 @@ class ApiDataCollector implements DataCollectorInterface, EventSubscriberInterfa
     return $this->getTotalTime() / count($this->data);
   }
 
+  public function getApiCalls() {
+    return $this->data;
+  }
+
   public static function getSubscribedEvents() {
     return [
       'civi.api.prepare' => 'onApiPrepare',

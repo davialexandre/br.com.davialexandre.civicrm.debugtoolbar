@@ -157,3 +157,53 @@ body {
 }
 
 #da-profile-collector h3:first-of-type { margin-top: 0; }
+
+#da-profile-collector .da-profile-stats {
+  overflow: auto;
+}
+
+#da-profile-collector .da-profile-stat {
+  border: 1px solid #E0E0E0;
+  min-width: 100px;
+  float: left;
+  margin-right: 10px;
+  text-align: center;
+}
+
+#da-profile-collector .da-profile-stat-value {
+  background-color: #FFFFFF;
+  padding: 10px;
+  font-size: 2em;
+}
+
+#da-profile-collector .da-profile-stat-name {
+  background-color: #E0E0E0;
+  padding: 5px;
+  font-size: .8em;
+  font-weight: bold;
+}
+
+#da-profile-collector table {
+  font-size: .9em;
+  min-width: auto;
+}
+
+#da-profile-collector table tr {
+  border: 1px solid #E0E0E0;
+  background-color: #FFFFFF;
+}
+
+#da-profile-collector thead th {
+  background-color: #E0E0E0;
+  font-weight: bold;
+  padding: 6px;
+  text-align: left;
+}
+
+#da-profile-collector tbody td {
+  padding: 15px 10px;
+}
+
+#da-profile-collector table .no-wrap {
+  white-space: pre;
+}
