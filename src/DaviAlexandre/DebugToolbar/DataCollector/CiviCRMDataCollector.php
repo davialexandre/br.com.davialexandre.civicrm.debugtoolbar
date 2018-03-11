@@ -75,7 +75,15 @@ class CiviCRMDataCollector implements DataCollectorInterface {
   }
 
   public function getEnvironment() {
-    return (bool)$this->data['settings']['environment'];
+    return $this->data['settings']['environment'];
+  }
+
+  public function getExtensions() {
+    return $this->data['extensions'];
+  }
+
+  public function getSettings() {
+    return $this->data['settings'];
   }
 
   private function getSystemInfo() {
@@ -89,20 +97,20 @@ class CiviCRMDataCollector implements DataCollectorInterface {
       return;
     }
 
-    $settings = $this->getSettings();
+    $settings = $this->getSettingsData();
     return [
       'version' => \CRM_Utils_Array::value('version', $systemInfo['civi']),
       'settings' => $settings,
-      'extensions' => $this->getExtensions(),
-      'paths' => $this->getPaths($settings)
+      'extensions' => $this->getExtensionsData(),
+      'paths' => $this->getPathsData($settings)
     ];
   }
 
-  private function getSettings() {
+  private function getSettingsData() {
     return $this->apiGetFirst('Setting');
   }
 
-  private function getExtensions() {
+  private function getExtensionsData() {
     $extensions = $this->apiGet('Extension');
 
     $extensionsData = [];
@@ -121,7 +129,7 @@ class CiviCRMDataCollector implements DataCollectorInterface {
     return $extensionsData;
   }
 
-  private function getPaths($settings) {
+  private function getPathsData($settings) {
     return [
       'root' => $this->paths->getPath('[civicrm.root]/.'),
       'extensions' => $this->paths->getPath($settings['extensionsDir']),

@@ -176,6 +176,10 @@ body {
   font-size: 2em;
 }
 
+#da-profile-collector .da-profile-stat-value .fa-check { color: #3e963f; }
+
+#da-profile-collector .da-profile-stat-value .fa-times { color: #E00B27; }
+
 #da-profile-collector .da-profile-stat-name {
   background-color: #E0E0E0;
   padding: 5px;
@@ -200,10 +204,23 @@ body {
   text-align: left;
 }
 
-#da-profile-collector tbody td {
-  padding: 15px 10px;
+#da-profile-collector tbody td { padding: 15px 10px; }
+
+#da-profile-collector table .no-wrap { white-space: pre; }
+
+#da-profile-collector .da-profile-extension-installed {
+  background-color: #3e963f;
+  color: #FFFFFF;
 }
 
-#da-profile-collector table .no-wrap {
-  white-space: pre;
+#da-profile-collector .da-profile-extension-uninstalled {
+  background-color: #F2A30F;
+  color: #FFFFFF;
 }
+
+#da-profile-collector .da-profile-extension-name {
+  font-weight: bold;
+  display: block;
+}
+
+#da-profile-collector .da-profile-extension-key { color: rgba(0, 0, 0, .6); }
