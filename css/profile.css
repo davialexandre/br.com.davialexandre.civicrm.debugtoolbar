@@ -224,3 +224,22 @@ body {
 }
 
 #da-profile-collector .da-profile-extension-key { color: rgba(0, 0, 0, .6); }
+
+#da-profile-collector .da-profile-api-actions {
+  display: block;
+  font-size: .8em;
+  margin-top: 7px;
+  color: #2474A6;
+  cursor: pointer;
+}
+
+#da-profile-collector .da-profile-api-actions span { margin-right: 15px; }
+
+#da-profile-collector .da-profile-api-actions span:hover { text-decoration: underline; }
+
+#da-profile-collector .da-profile-api-details {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-top: 5px;
+  display: none;
+}

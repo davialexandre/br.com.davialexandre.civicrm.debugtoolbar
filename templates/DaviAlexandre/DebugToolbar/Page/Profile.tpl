@@ -5,6 +5,7 @@
   <title>Debug Toolbar - Profile {$profile->getIdentifier()}</title>
   <link rel="stylesheet" href="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="css/profile.css"}">
   <link rel="stylesheet" href="/sites/all/modules/civicrm/bower_components/font-awesome/css/font-awesome.css">
+  <script type="text/javascript" src="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="js/vendor/jquery-3.3.1.min.js"}"></script>
 </head>
 <body>
   <header id="da-profile-summary">
