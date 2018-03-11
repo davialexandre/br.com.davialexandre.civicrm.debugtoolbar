@@ -126,6 +126,19 @@ body {
 }
 
 #da-profile-menu ul li .fa {
+  display: inline-block;
+  padding-right: 15px;
+  width: 16px;
+  height: 16px;
+}
+
+#da-profile-menu ul li .crm-logo-lg {
+  display: inline-block;
+  background: url('/sites/all/modules/civicrm/i/logo_lg.png') no-repeat 0 0;
+  background-size: 16px 16px;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
   padding-right: 15px;
 }
 
