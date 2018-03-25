@@ -86,6 +86,10 @@ class CiviCRMDataCollector implements DataCollectorInterface {
     return $this->data['settings'];
   }
 
+  public function getUserFramework() {
+    return $this->data['userFramework'];
+  }
+
   private function getSystemInfo() {
     return $this->apiGetFirst('System');
   }
@@ -102,7 +106,8 @@ class CiviCRMDataCollector implements DataCollectorInterface {
       'version' => \CRM_Utils_Array::value('version', $systemInfo['civi']),
       'settings' => $settings,
       'extensions' => $this->getExtensionsData(),
-      'paths' => $this->getPathsData($settings)
+      'paths' => $this->getPathsData($settings),
+      'userFramework' => CIVICRM_UF
     ];
   }
 

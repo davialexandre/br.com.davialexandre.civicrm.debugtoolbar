@@ -10,6 +10,14 @@
   </div>
   <div class="da-profile-stat">
     <div class="da-profile-stat-value">
+      {$collector->getUserFramework()}
+    </div>
+    <div class="da-profile-stat-name">
+      User Framework
+    </div>
+  </div>
+  <div class="da-profile-stat">
+    <div class="da-profile-stat-value">
       {if $collector->isDebugEnabled()}
         <i class="fa fa-check"></i>
       {else}
