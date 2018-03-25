@@ -42,7 +42,7 @@
     <tr>
       <td>{$smarty.foreach.queries.iteration}</td>
       <td>{$query.class}</td>
-      <td>{$query.query}</td>
+      <td><pre class="sql"><code>{$query.query|formatSQL}</code></pre></td>
       <td>{$query.rows}</td>
       <td class="no-wrap">{$query.time|string_format:"%.2f"} ms</td>
     </tr>

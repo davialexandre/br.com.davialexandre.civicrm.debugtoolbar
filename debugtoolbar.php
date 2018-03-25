@@ -14,6 +14,8 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  */
 function debugtoolbar_civicrm_config(&$config) {
   _debugtoolbar_civix_civicrm_config($config);
+  $smarty = CRM_Core_Smarty::singleton();
+  array_push($smarty->plugins_dir, __DIR__ . '/src/DaviAlexandre/DebugToolbar/Smarty/plugins');
   $profiler = Civi::container()->get('debug_toolbar.profiler');
 }
 

@@ -5,7 +5,9 @@
   <title>Debug Toolbar - Profile {$profile->getIdentifier()}</title>
   <link rel="stylesheet" href="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="css/profile.css"}">
   <link rel="stylesheet" href="/sites/all/modules/civicrm/bower_components/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="css/vendor/highlightjs/color-brewer.css"}">
   <script type="text/javascript" src="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="js/vendor/jquery-3.3.1.min.js"}"></script>
+  <script type="text/javascript" src="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="js/vendor/highlight.pack.js"}"></script>
 </head>
 <body>
   <header id="da-profile-summary">
@@ -39,5 +41,14 @@
       {include file=$templates.$selectedCollector.profile collector=$collectors.$selectedCollector}
     </article>
   </div>
+  <script type="text/javascript">
+    {literal}
+    $(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
+    {/literal}
+  </script>
 </body>
 </html>
