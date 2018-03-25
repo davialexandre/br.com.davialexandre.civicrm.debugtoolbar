@@ -27,10 +27,10 @@
 </div>
 
 <h3>API Calls</h3>
-<table>
+<table class="da-sortable-table">
   <thead>
     <tr>
-      <th>#</th>
+      <th data-sort-default>#</th>
       <th>API</th>
       <th>Count</th>
       <th>Time</th>

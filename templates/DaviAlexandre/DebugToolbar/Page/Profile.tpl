@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="css/vendor/highlightjs/color-brewer.css"}">
   <script type="text/javascript" src="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="js/vendor/jquery-3.3.1.min.js"}"></script>
   <script type="text/javascript" src="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="js/vendor/highlight.pack.js"}"></script>
+  <script type="text/javascript" src="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="js/vendor/tablesort.min.js"}"></script>
+  <script type="text/javascript" src="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="js/vendor/sorts/tablesort.number.min.js"}"></script>
+  <script type="text/javascript" src="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="js/vendor/sorts/tablesort.dotsep.min.js"}"></script>
 </head>
 <body>
   <header id="da-profile-summary">
@@ -46,6 +49,10 @@
     $(document).ready(function() {
       $('pre code').each(function(i, block) {
         hljs.highlightBlock(block);
+      });
+
+      $('table.da-sortable-table').each(function(i, table) {
+        new Tablesort(table);
       });
     });
     {/literal}

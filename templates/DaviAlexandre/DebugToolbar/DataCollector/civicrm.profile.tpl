@@ -43,10 +43,10 @@
 </div>
 
 <h3>Paths</h3>
-<table>
+<table class="da-sortable-table">
   <thead>
   <tr>
-    <th>Name</th>
+    <th data-sort-default>Name</th>
     <th>Path</th>
   </tr>
   </thead>
@@ -76,10 +76,10 @@
 </table>
 
 <h3>Extensions</h3>
-<table>
+<table class="da-sortable-table">
   <thead>
   <tr>
-    <th>Name (key)</th>
+    <th data-sort-default>Name (key)</th>
     <th>Version</th>
     <th>Schema Version</th>
     <th>Path</th>
@@ -100,10 +100,10 @@
 </table>
 
 <h3>Settings</h3>
-<table>
+<table class="da-sortable-table">
   <thead>
   <tr>
-    <th>Name</th>
+    <th data-sort-default>Name</th>
     <th>Value</th>
   </tr>
   </thead>

@@ -27,10 +27,10 @@
 </div>
 
 <h3>Queries</h3>
-<table>
+<table class="da-sortable-table">
   <thead>
   <tr>
-    <th>#</th>
+    <th data-sort-default>#</th>
     <th>Class</th>
     <th>Query</th>
     <th class="no-wrap">No. of Rows</th>
