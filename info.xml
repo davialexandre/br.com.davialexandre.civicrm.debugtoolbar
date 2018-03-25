@@ -22,5 +22,6 @@
   </civix>
   <classloader>
     <psr4 prefix="DaviAlexandre\" path="src/DaviAlexandre"></psr4>
+    <psr4 prefix="AD7six\Dsn\" path="libraries/php-dsn"></psr4>
   </classloader>
 </extension>

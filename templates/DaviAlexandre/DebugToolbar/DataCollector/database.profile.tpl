@@ -26,6 +26,38 @@
   </div>
 </div>
 
+<h3>Database Connections</h3>
+<table>
+  <thead>
+    <th>Connection</th>
+    <th>Host</th>
+    <th>Port</th>
+    <th>User</th>
+    <th>Password</th>
+    <th>Database</th>
+  </thead>
+  <tbody>
+    <tr>
+      {assign var="connection" value=$collector->getCiviCRMConnection()}
+      <td>CiviCRM</td>
+      <td>{$connection.host}</td>
+      <td>{$connection.port}</td>
+      <td>{$connection.user}</td>
+      <td>{$connection.pass}</td>
+      <td>{$connection.database}</td>
+    </tr>
+    <tr>
+      {assign var="connection" value=$collector->getCMSConnection()}
+      <td>CMS</td>
+      <td>{$connection.host}</td>
+      <td>{$connection.port}</td>
+      <td>{$connection.user}</td>
+      <td>{$connection.pass}</td>
+      <td>{$connection.database}</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3>Queries</h3>
 <table class="da-sortable-table">
   <thead>

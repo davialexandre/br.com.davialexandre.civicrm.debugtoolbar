@@ -18,6 +18,14 @@
         <td>Average Query time</td>
         <td>{$collector->getAverageQueryTime()|string_format:"%.2f"} ms</td>
       </tr>
+      <tr>
+        <td>CiviCRM DB</td>
+        <td>{$collector->getCiviCRMDatabase()}</td>
+      </tr>
+      <tr>
+        <td>CMS DB</td>
+        <td>{$collector->getCMSDatabase()}</td>
+      </tr>
     </table>
   </div>
 </div>

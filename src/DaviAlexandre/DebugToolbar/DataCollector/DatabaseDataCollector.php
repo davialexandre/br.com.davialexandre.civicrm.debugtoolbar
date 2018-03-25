@@ -2,6 +2,7 @@
 
 namespace DaviAlexandre\DebugToolbar\DataCollector;
 
+use AD7six\Dsn\Dsn;
 use Civi\Core\Event\GenericHookEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -10,7 +11,9 @@ class DatabaseDataCollector implements DataCollectorInterface, EventSubscriberIn
   private $data;
   private $queryStack;
 
-  public function collect() {}
+  public function collect() {
+    $this->data['connection'] = $this->getConnectionData();
+  }
 
   public function getName() {
     return 'database';
@@ -44,6 +47,22 @@ class DatabaseDataCollector implements DataCollectorInterface, EventSubscriberIn
 
   public function getQueries() {
     return $this->data['queries'];
+  }
+
+  public function getCiviCRMConnection() {
+    return $this->data['connection']['civicrm'];
+  }
+
+  public function getCMSConnection() {
+    return $this->data['connection']['cms'];
+  }
+
+  public function getCiviCRMDatabase() {
+    return $this->getCiviCRMConnection()['database'];
+  }
+
+  public function getCMSDatabase() {
+    return $this->getCMSConnection()['database'];
   }
 
   private function handleDatabaseDebugMessage($class, $message, $logtype) {
@@ -83,5 +102,12 @@ class DatabaseDataCollector implements DataCollectorInterface, EventSubscriberIn
     }
 
     return $parsedResult;
+  }
+
+  private function getConnectionData() {
+    return [
+      'civicrm' => Dsn::parse(CIVICRM_DSN)->toArray(),
+      'cms' => Dsn::parse(CIVICRM_UF_DSN)->toArray(),
+    ];
   }
 }
