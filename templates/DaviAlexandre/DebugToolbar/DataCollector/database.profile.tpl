@@ -42,10 +42,24 @@
     <tr>
       <td>{$smarty.foreach.queries.iteration}</td>
       <td>{$query.class}</td>
-      <td><pre class="sql"><code>{$query.query|formatSQL}</code></pre></td>
+      <td>
+        <pre class="sql"><code>{$query.query|formatSQL}</code></pre>
+        <span class="da-profile-cell-actions">
+          <span class="da-profile-cell-action da-copy-sql">Copy to clipboard <i class="fa fa-copy"></i> </span>
+        </span>
+      </td>
       <td>{$query.rows}</td>
       <td class="no-wrap">{$query.time|string_format:"%.2f"} ms</td>
     </tr>
   {/foreach}
   </tbody>
 </table>
+<script type="text/javascript">
+  {literal}
+  new ClipboardJS('.da-copy-sql', {
+    text: function(trigger) {
+      return trigger.parentElement.parentElement.querySelector('code').innerText;
+    }
+  });
+  {/literal}
+</script>

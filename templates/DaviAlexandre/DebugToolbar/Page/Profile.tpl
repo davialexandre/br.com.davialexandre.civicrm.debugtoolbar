@@ -11,6 +11,7 @@
   <script type="text/javascript" src="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="js/vendor/tablesort.min.js"}"></script>
   <script type="text/javascript" src="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="js/vendor/sorts/tablesort.number.min.js"}"></script>
   <script type="text/javascript" src="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="js/vendor/sorts/tablesort.dotsep.min.js"}"></script>
+  <script type="text/javascript" src="{crmResURL ext="br.com.davialexandre.civicrm.debugtoolbar" file="js/vendor/clipboard.min.js"}"></script>
 </head>
 <body>
   <header id="da-profile-summary">
