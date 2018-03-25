@@ -42,9 +42,9 @@
         <td>{$smarty.foreach.apiCalls.iteration}</td>
         <td>
           {$apiCall.entity}.{$apiCall.action}
-          <span class="da-profile-api-actions">
-            <span class="da-profile-show-params">Show params</span>
-            <span class="da-profile-show-response">Show response</span>
+          <span class="da-profile-cell-actions">
+            <span class="da-profile-cell-action da-profile-show-params">Show params</span>
+            <span class="da-profile-cell-action da-profile-show-response">Show response</span>
           </span>
           <div class="da-profile-api-details da-profile-api-params">
             <pre>{php}$apiCall = $this->get_template_vars('apiCall'); print_r($apiCall['params']);{/php}</pre>

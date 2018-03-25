@@ -258,7 +258,7 @@ body {
 
 #da-profile-collector .da-profile-extension-key { color: rgba(0, 0, 0, .6); }
 
-#da-profile-collector .da-profile-api-actions {
+#da-profile-collector .da-profile-cell-actions {
   display: block;
   font-size: .8em;
   margin-top: 7px;
@@ -266,9 +266,9 @@ body {
   cursor: pointer;
 }
 
-#da-profile-collector .da-profile-api-actions span { margin-right: 15px; }
+#da-profile-collector .da-profile-cell-actions .da-profile-cell-action { margin-right: 15px; }
 
-#da-profile-collector .da-profile-api-actions span:hover { text-decoration: underline; }
+#da-profile-collector .da-profile-cell-actions .da-profile-cell-action:hover { text-decoration: underline; }
 
 #da-profile-collector .da-profile-api-details {
   background-color: #f2f2f2;
