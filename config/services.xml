@@ -29,6 +29,7 @@
       <tag name="debug_toolbar.data_collector"
            toolbar_template="DaviAlexandre/DebugToolbar/DataCollector/memory.toolbar.tpl"
            profile_menu_item_template="DaviAlexandre/DebugToolbar/DataCollector/memory.profile_menu_item.tpl"
+           profile_template="DaviAlexandre/DebugToolbar/DataCollector/memory.profile.tpl"
            id="memory" />
     </service>
 
@@ -38,6 +39,7 @@
       <tag name="debug_toolbar.data_collector"
            toolbar_template="DaviAlexandre/DebugToolbar/DataCollector/page.toolbar.tpl"
            profile_menu_item_template="DaviAlexandre/DebugToolbar/DataCollector/page.profile_menu_item.tpl"
+           profile_template="DaviAlexandre/DebugToolbar/DataCollector/page.profile.tpl"
            id="page" />
     </service>
 
@@ -46,6 +48,7 @@
       <tag name="debug_toolbar.data_collector"
            toolbar_template="DaviAlexandre/DebugToolbar/DataCollector/user.toolbar.tpl"
            profile_menu_item_template="DaviAlexandre/DebugToolbar/DataCollector/user.profile_menu_item.tpl"
+           profile_template="DaviAlexandre/DebugToolbar/DataCollector/user.profile.tpl"
            id="user" />
     </service>
 
@@ -65,7 +68,6 @@
 
     <service id="debug_toolbar.profiler" class="DaviAlexandre\DebugToolbar\Profile\Profiler">
       <argument type="service" id="debug_toolbar.profile_file_storage" />
-      <argument type="service" id="resources" />
     </service>
   </services>
 

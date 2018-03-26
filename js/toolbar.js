@@ -5,7 +5,7 @@
 
   $.ajax({
     url: '/civicrm/debug-toolbar/toolbar',
-    data: { snippet: 1, id: CRM.debug_toolbar_profile_identifier },
+    data: { snippet: 4, id: CRM.debug_toolbar_profile_identifier },
     dataType: "html"
   }).done(function(data) {
     $(window.document.body).append(data);

@@ -11,12 +11,9 @@ class Profiler {
   private $enabled = true;
   private $storage;
 
-  public function __construct(ProfileStorageInterface $storage, \CRM_Core_Resources $resources) {
+  public function __construct(ProfileStorageInterface $storage) {
     $this->storage = $storage;
-
-    $resources->addSetting([
-      'debug_toolbar_profile_identifier' => $this->createProfileIdentifier()
-    ]);
+    $this->createProfileIdentifier();
   }
 
   public function enable() {
@@ -62,7 +59,11 @@ class Profiler {
   }
 
   public function loadProfile($identifier) {
-    return $this->storage->read($identifier);
+    try {
+      return $this->storage->read($identifier);
+    } catch(\Exception $e) {
+      return null;
+    }
   }
 
   private function createProfileIdentifier() {
@@ -70,6 +71,10 @@ class Profiler {
       $this->profileIdentifier = substr(hash('sha256', uniqid(mt_rand(), true)), 0, 6);
     }
 
+    return $this->profileIdentifier;
+  }
+
+  public function getProfileIdentifier() {
     return $this->profileIdentifier;
   }
 

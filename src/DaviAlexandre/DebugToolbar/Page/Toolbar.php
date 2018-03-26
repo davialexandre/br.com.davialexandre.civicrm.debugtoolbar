@@ -2,8 +2,6 @@
 
 namespace DaviAlexandre\DebugToolbar\Page;
 
-use \CRM_DebugToolbar_ExtensionUtil as E;
-
 class Toolbar extends \CRM_Core_Page {
 
   public function run() {
@@ -13,11 +11,14 @@ class Toolbar extends \CRM_Core_Page {
       \CRM_Utils_System::civiExit();
     }
 
+    /** @var \DaviAlexandre\DebugToolbar\Profile\Profiler $profiler */
     $profiler = \Civi::container()->get('debug_toolbar.profiler');
     $profiler->disable();
     $profile = $profiler->loadProfile($id);
 
-    \Civi::resources()->addStyleFile(E::LONG_NAME, 'css/toolbar.css');
+    if(!$profile) {
+      \CRM_Utils_System::civiExit();
+    }
 
     $this->assign('profile', $profile);
     $this->assign('templates', \Civi::container()->getParameter('debug_toolbar.templates'));

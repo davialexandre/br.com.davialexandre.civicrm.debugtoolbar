@@ -149,5 +149,16 @@ function debugtoolbar_civicrm_buildForm($formName, $form) {
 }
 
 function _debugtoolbar_civicrm_addResources() {
-  Civi::resources()->addScriptFile(E::LONG_NAME, 'js/toolbar.js');
+  if(array_key_exists('snippet', $_REQUEST)) {
+    return;
+  }
+
+  $profiler = Civi::container()->get('debug_toolbar.profiler');
+
+  Civi::resources()
+    ->addStyleFile(E::LONG_NAME, 'css/toolbar.css')
+    ->addScriptFile(E::LONG_NAME, 'js/toolbar.js')
+    ->addSetting([
+      'debug_toolbar_profile_identifier' => $profiler->getProfileIdentifier()
+    ]);
 }
