@@ -62,6 +62,15 @@
            id="database" />
     </service>
 
+    <service id="debug_toolbar.data_collector.system"
+             class="DaviAlexandre\DebugToolbar\DataCollector\SystemDataCollector">
+      <tag name="debug_toolbar.data_collector"
+           toolbar_template="DaviAlexandre/DebugToolbar/DataCollector/system.toolbar.tpl"
+           profile_menu_item_template="DaviAlexandre/DebugToolbar/DataCollector/system.profile_menu_item.tpl"
+           profile_template="DaviAlexandre/DebugToolbar/DataCollector/system.profile.tpl"
+           id="system" />
+    </service>
+
     <service id="debug_toolbar.profile_file_storage" class="DaviAlexandre\DebugToolbar\Profile\FileProfileStorage">
       <argument type="service" id="paths" />
     </service>
